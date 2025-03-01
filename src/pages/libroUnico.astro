@@ -1,0 +1,9 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Libro from '../components/libroUnico.vue';
+
+---
+
+<Layout>
+    <Libro :id="params.id" client:only="vue" />
+</Layout>
