@@ -1,7 +1,6 @@
 <template>
   <div>
     <h1>Libros</h1>
-    <pre>{{ libros }}</pre> <!-- Mostrar el JSON completo -->
     <ul>
       <li v-for="libro in libros" :key="libro.libreriaMateriaId">{{ libro.titulo }}</li>
     </ul>
@@ -19,12 +18,9 @@ export default {
     };
   },
   async created() {
-    console.log('Método created ejecutado');
     try {
       const response = await apiClient.get('/api/LibroMaterial');
-      console.log('Respuesta de la API:', response.data); // Verifica la respuesta de la API
       this.libros = response.data;
-      console.log('Libros después de asignar:', this.libros); // Verifica los datos asignados
     } catch (error) {
       console.error('Error al obtener libros:', error);
     }
