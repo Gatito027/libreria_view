@@ -1,13 +1,13 @@
 import axios from 'axios';
 
-const autorApiClient = axios.create({
-  baseURL: 'http://www.AplicacionPrueba1.somee.com',
+const apiClient = axios.create({
+  baseURL: 'https://localhost:7297/',
   headers: {
     'Content-Type': 'application/json'
   }
 });
 
-autorApiClient.interceptors.response.use(
+apiClient.interceptors.response.use(
   response => response,
   error => {
     console.error('Error en la solicitud:', error);
@@ -15,4 +15,4 @@ autorApiClient.interceptors.response.use(
   }
 );
 
-export default autorApiClient;
+export default apiClient;
