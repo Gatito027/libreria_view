@@ -1,14 +1,19 @@
 <template>
   <div class="container mt-5">
-    <div class="card">
+    <div class="card shadow-sm">
       <div class="card-body">
         <h1 class="card-title">{{ libro.titulo }}</h1>
         <h6 class="card-subtitle mb-2 text-muted">Fecha de publicación: {{ libro.fechaPublicacion }}</h6>
-        <h5>Autor:</h5>
-        <h6>{{ autor.nombre }} {{ autor.apellido }} </h6>
-        <p>Fecha de nacimiento {{ autor.fechaNacimiento }}</p>
-        <p>Grados Academicos:</p>
-        <span v-for="gradoAcademico in autor.gradosAcademicos" :key="gradoAcademico.gradoAcademicoId" class="badge rounded-pill bg-success me-2 mb-2">{{ gradoAcademico.nombre }}</span>
+        <div class="d-flex align-items-center mb-3">
+          <div>
+            <h5 class="mb-0">{{ autor.nombre }} {{ autor.apellido }}</h5>
+            <p class="mb-0"><small>Fecha de nacimiento: {{ autor.fechaNacimiento }}</small></p>
+          </div>
+        </div>
+        <h5>Grados Académicos:</h5>
+        <div>
+          <span v-for="gradoAcademico in autor.gradosAcademicos" :key="gradoAcademico.gradoAcademicoId" class="badge rounded-pill bg-success me-2 mb-2">{{ gradoAcademico.nombre }}</span>
+        </div>
       </div>
     </div>
   </div>
@@ -53,6 +58,26 @@ export default defineComponent({
 });
 </script>
 
-<style>
-/* Añade tus estilos aquí */
+<style scoped>
+.container {
+  max-width: 800px;
+}
+
+.card-title {
+  font-size: 2rem;
+  color: #333;
+}
+
+.card-subtitle {
+  font-size: 1rem;
+  color: #6c757d;
+}
+
+.card-body {
+  font-size: 1rem;
+}
+
+.badge {
+  font-size: 0.9rem;
+}
 </style>

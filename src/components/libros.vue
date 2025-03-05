@@ -38,11 +38,42 @@ export default {
 }
 </script>
 
-<style>
-.card-title {
-  font-weight: bold;
+<style scoped>
+.container {
+  max-width: 960px;
 }
+
+.card-title {
+  font-size: 1.5rem;
+  color: #333;
+}
+
 .card-text {
-  color: #555;
+  font-size: 1rem;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-img-top {
+  height: 250px;
+  object-fit: cover;
+}
+
+.text-muted {
+  color: #6c757d !important;
+}
+
+/* Estilos adicionales para el efecto hover */
+.card:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s;
+}
+
+.card:hover .card-title {
+  color: #007bff;
 }
 </style>
